@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="31.512486mm"
+   height="10.367751mm"
+   viewBox="0 0 31.512486 10.367751"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-0.08717637,-0.13334813)">
+    <path
+       d="M 0.08717637,2.2934954 H 5.4946037 V 10.501099 H 0.08717637 V 9.5309594 H 4.4031963 V 7.2819988 H 0.08717637 V 6.3118589 H 4.4031963 V 3.2636353 H 0.08717637 Z"
+       id="text10"
+       style="font-size:11.2889px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;text-anchor:middle;fill:#010101;fill-rule:evenodd;stroke-width:9.35;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:18.7001, 18.7001;stroke-dashoffset:47.6851;stroke-opacity:0.850794"
+       aria-label="E" />
+    <path
+       d="M 13.608004,10.397086 H 12.301623 L 10.554269,8.0323702 8.7958886,10.397086 H 7.5887261 L 9.9920285,7.3268139 7.6107747,4.2400052 H 8.9171566 L 10.653488,6.5661361 12.39533,4.2400052 h 1.212674 l -2.419837,3.0316871 z"
+       id="text11"
+       style="font-size:11.2889px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;text-anchor:middle;fill:#010101;fill-rule:evenodd;stroke-width:9.35;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:18.7001, 18.7001;stroke-dashoffset:47.6851;stroke-opacity:0.850794"
+       aria-label="x" />
+    <path
+       d="m 25.084301,6.2084166 q 0,0.7717022 -0.248047,1.3725275 -0.242535,0.5953131 -0.677995,0.9977006 -0.468534,0.4354605 -1.141017,0.694532 -0.672483,0.2535593 -1.433161,0.2700957 V 10.458291 H 20.498185 V 9.5432724 Q 19.759556,9.526736 19.081561,9.2786888 18.403565,9.0306417 17.924008,8.5786447 17.488547,8.170745 17.2405,7.5754319 16.997965,6.9801188 16.997965,6.2084166 q 0,-0.7496535 0.237023,-1.3118937 0.237023,-0.5622401 0.655947,-0.9811642 0.446484,-0.4464848 1.113456,-0.7055562 0.672483,-0.2590715 1.493794,-0.2811201 V 2.0742978 h 1.085896 v 0.8543846 q 0.815799,0.016536 1.493795,0.2866322 0.677995,0.2700958 1.113456,0.7000441 0.413411,0.4023876 0.650434,0.9756521 0.242535,0.5732644 0.242535,1.3174058 z m -1.135504,-0.044097 q 0,-0.5457037 -0.176389,-1.0032129 Q 23.596018,4.7035974 23.270801,4.3894044 22.951096,4.0807235 22.559733,3.9374074 22.168369,3.7940913 21.584081,3.7830669 v 4.905821 q 0.518143,-0.011024 0.942579,-0.1653648 0.424436,-0.1598525 0.700044,-0.418924 0.35829,-0.3307295 0.540191,-0.8102873 0.181902,-0.4795578 0.181902,-1.1299922 z M 20.498185,8.6888879 V 3.7830669 Q 19.913897,3.7885769 19.522533,3.9374074 19.13117,4.0862356 18.811465,4.3894044 18.49176,4.6925731 18.309859,5.1611065 18.13347,5.62964 18.13347,6.1643194 q 0,0.6173617 0.181901,1.1189681 0.187413,0.5016064 0.540191,0.8213116 0.270096,0.2480471 0.694532,0.4134119 0.429949,0.1653647 0.948091,0.1708769 z"
+       id="text12"
+       style="font-size:11.2889px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;text-anchor:middle;fill:#010101;fill-rule:evenodd;stroke-width:9.35;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:18.7001, 18.7001;stroke-dashoffset:47.6851;stroke-opacity:0.850794"
+       aria-label="Φ" />
+    <path
+       d="M 31.599661,10.397086 H 30.293279 L 28.545925,8.0323702 26.787546,10.397086 H 25.580384 L 27.983685,7.3268139 25.602432,4.2400052 h 1.306382 l 1.73633,2.3261309 1.741842,-2.3261309 h 1.212675 l -2.419838,3.0316871 z"
+       id="text13"
+       style="font-size:11.2889px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;text-anchor:middle;fill:#010101;fill-rule:evenodd;stroke-width:9.35;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:18.7001, 18.7001;stroke-dashoffset:47.6851;stroke-opacity:0.850794"
+       aria-label="x" />
+    <path
+       d="m 24.978765,0.79480753 h -8.110807 v -0.6614594 h 8.110807 z"
+       id="text16"
+       style="font-size:11.9643px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;text-anchor:middle;fill:#010101;fill-rule:evenodd;stroke-width:9.35001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:18.7001, 18.7001;stroke-dashoffset:47.6851;stroke-opacity:0.850794"
+       aria-label="_" />
+  </g>
+</svg>
