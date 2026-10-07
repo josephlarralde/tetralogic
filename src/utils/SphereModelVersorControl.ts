@@ -3,6 +3,7 @@ import { EventEmitter } from 'events';
 import {
   Mesh,
   Quaternion,
+  OrthographicCamera,
   PerspectiveCamera,
   Raycaster,
   Scene,
@@ -19,7 +20,7 @@ class SphereModelVersorControl extends EventEmitter {
   width: number
   height: number
   scene: Scene
-  camera: PerspectiveCamera
+  camera: PerspectiveCamera|OrthographicCamera
   sphere: Mesh
   pointer: Vector2
   pointerIsDown: boolean
@@ -36,7 +37,7 @@ class SphereModelVersorControl extends EventEmitter {
   constructor(
     $container: HTMLElement,
     scene: Scene,
-    camera: PerspectiveCamera,
+    camera: PerspectiveCamera|OrthographicCamera,
     sphere: Mesh
   ) {
     super();
