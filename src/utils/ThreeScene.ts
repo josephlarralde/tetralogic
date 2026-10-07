@@ -1,10 +1,10 @@
 import {
   AmbientLight,
   DirectionalLight,
-  BufferGeometry,
-  Euler,
-  Float32BufferAttribute,
-  Matrix4,
+  // BufferGeometry,
+  // Euler,
+  // Float32BufferAttribute,
+  // Matrix4,
   MathUtils,
   MeshBasicMaterial,
   MeshStandardMaterial,
@@ -17,7 +17,7 @@ import {
   Vector3,
   WebGLRenderer,
   OrthographicCamera,
-  type EulerOrder,
+  // type EulerOrder,
   // MeshBasicMaterial,
   // BufferGeometry,
 } from 'three'
@@ -100,33 +100,32 @@ class ThreeScene {
     this.ghostTetra = new Mesh(tetraGeo.clone(), ghostTetraMat)
     // this.ghostTetra.scale.set(1.01,1.01,1.01)
 
-    
-    /*
-    // How to build your own  tetrahedron :
+    //--------------------------------------------------------------------------
+    // Build your own tetrahedron :
 
-    const tetra2Geo = new BufferGeometry()
-    const leftBottomBack   = [-1, -1, -1]
-    const rightBottomFront = [1, -1, 1]
-    const leftTopFront    = [-1, 1, 1]
-    const rightTopBack     = [1, 1, -1]
+    // const tetra2Geo = new BufferGeometry()
+    // const leftBottomBack   = [-1, -1, -1]
+    // const rightBottomFront = [1, -1, 1]
+    // const leftTopFront    = [-1, 1, 1]
+    // const rightTopBack     = [1, 1, -1]
 
-    const faces = [
-      leftBottomBack, leftTopFront, rightTopBack,
-      leftBottomBack, rightTopBack, rightBottomFront,
-      leftBottomBack, rightBottomFront, leftTopFront,
-      leftTopFront, rightBottomFront, rightTopBack
-    ]
-    .flat()
-    .map((v: number) => {
-      // on veut diagonale = 10 = côté * sqrt(3)
-      // donc côté = 10 / sqrt(3)
-      return v * 10 / Math.sqrt(3)
-    })
+    // const faces = [
+    //   leftBottomBack, leftTopFront, rightTopBack,
+    //   leftBottomBack, rightTopBack, rightBottomFront,
+    //   leftBottomBack, rightBottomFront, leftTopFront,
+    //   leftTopFront, rightBottomFront, rightTopBack
+    // ]
+    // .flat()
+    // .map((v: number) => {
+    //   // on veut diagonale = 10 = côté * sqrt(3)
+    //   // donc côté = 10 / sqrt(3)
+    //   return v * 10 / Math.sqrt(3)
+    // })
 
-    tetra2Geo.setAttribute('position', new Float32BufferAttribute(faces, 3))
-    tetra2Geo.computeVertexNormals()
-    //*/
+    // tetra2Geo.setAttribute('position', new Float32BufferAttribute(faces, 3))
+    // tetra2Geo.computeVertexNormals()
 
+    //--------------------------------------------------------------------------
     // MEMO : to snap relative to this base rotation `m` (instead of the
     // identity pose) later, convert it to a quaternion once and premultiply
     // every generated orientation by it, so that each target becomes
@@ -139,11 +138,15 @@ class ThreeScene {
     // Also start the sphere from qm if the initial pose should be the base pose.
 
     // this rotation matrix gets the tetrahedron to point towards the camera
-    const m = new Matrix4().makeRotationFromEuler(new Euler(Math.atan2(1, Math.SQRT2), -Math.PI * 0.25, 0, 'XYZ'))
-    // this.tetra.setRotationFromMatrix(m)//new Euler(Math.PI * 0.25, Math.PI * 0.25, 0, 'YXZ')
+    // const m = new Matrix4().makeRotationFromEuler(
+    //   new Euler(Math.atan2(1, Math.SQRT2), -Math.PI * 0.25, 0, 'XYZ')
+    // )
+    // this.tetra.setRotationFromMatrix(m)
 
-    // the following code sets absolute vertice positions to their current positions
-    // and resets matrix
+    //--------------------------------------------------------------------------
+    // the following code sets absolute vertice positions to their current
+    // positions and resets matrix :
+
     // this.tetra.updateMatrix()
     // this.tetra.geometry.applyMatrix4(this.tetra.matrix)
     // this.tetra.matrix.identity()
@@ -151,15 +154,15 @@ class ThreeScene {
     // this.tetra.rotation.set( 0, 0, 0 );
     // this.tetra.scale.set( 1, 1, 1 );
 
-    const makeQuat = (axis: string, angle: number) => {
-      const a: EulerOrder = ({x:'XYZ', y:'YXZ', z:'ZXY'}[axis] || 'XYZ') as EulerOrder
-      const e = new Euler(angle, 0, 0, a)
-      return new Quaternion().setFromEuler(e)
-    }
-
+    //--------------------------------------------------------------------------
     // Add initial rotation offset along x / y / z axis
     // (better pick one of the 24 orientations and apply it) :
 
+    // const makeQuat = (axis: string, angle: number) => {
+    //   const a: EulerOrder = ({x:'XYZ', y:'YXZ', z:'ZXY'}[axis] || 'XYZ') as EulerOrder
+    //   const e = new Euler(angle, 0, 0, a)
+    //   return new Quaternion().setFromEuler(e)
+    // }
     // const qy = makeQuat('y', Math.PI)
     // qy.multiply(this.sphere.quaternion)
     // this.sphere.setRotationFromQuaternion(qy)  
