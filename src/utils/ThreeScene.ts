@@ -191,7 +191,12 @@ class ThreeScene {
     // this.camera = new PerspectiveCamera()
     // this.camera.fov = 75
     // this.camera.aspect = this.width / this.height
-    
+
+    const defaultZoom = 2;
+    const baseSize = 800; // reference viewport size used for defaultZoom
+    const sizeFactor = Math.min(this.width, this.height) / baseSize;
+    this.camera.zoom = Math.max(0.5, Math.min(8, defaultZoom * sizeFactor));
+
     this.camera.near = 0.1
     this.camera.far = 10000
     this.camera.position.z = 480//35
