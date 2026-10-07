@@ -100,7 +100,10 @@ class ThreeScene {
     this.ghostTetra = new Mesh(tetraGeo.clone(), ghostTetraMat)
     // this.ghostTetra.scale.set(1.01,1.01,1.01)
 
+    
     /*
+    // How to build your own  tetrahedron :
+
     const tetra2Geo = new BufferGeometry()
     const leftBottomBack   = [-1, -1, -1]
     const rightBottomFront = [1, -1, 1]
@@ -122,7 +125,7 @@ class ThreeScene {
 
     tetra2Geo.setAttribute('position', new Float32BufferAttribute(faces, 3))
     tetra2Geo.computeVertexNormals()
-    */
+    //*/
 
     // MEMO : to snap relative to this base rotation `m` (instead of the
     // identity pose) later, convert it to a quaternion once and premultiply
@@ -148,30 +151,21 @@ class ThreeScene {
     // this.tetra.rotation.set( 0, 0, 0 );
     // this.tetra.scale.set( 1, 1, 1 );
 
-    // TODO : create quaternion cues to interpolate from/to
-    // how many distinct rotation matrices exist such that we see a square ?
-    // answer (thanks gemini and its sources) : 6 faces of a cube can point
-    // towards the camera. once a facing face has been chosen, there are 4
-    // rotations around z, so we have a total of 6 * 4 = 24 orientations
-
-    // const q = new Quaternion().setFromEuler(new Euler(-Math.atan2(1, Math.SQRT2), Math.PI * 0.25, 0, 'YXZ'))
-    // const q = new Quaternion().setFromEuler(new Euler(0 * Math.atan2(1, Math.SQRT2), Math.PI * 1.5, 0, 'XYZ'))
-    // this.tetra.setRotationFromQuaternion(q)
     const makeQuat = (axis: string, angle: number) => {
       const a: EulerOrder = ({x:'XYZ', y:'YXZ', z:'ZXY'}[axis] || 'XYZ') as EulerOrder
       const e = new Euler(angle, 0, 0, a)
       return new Quaternion().setFromEuler(e)
     }
 
-    const qy = makeQuat('y', Math.PI)
-    // const qy = new Quaternion().setFromEuler(new Euler(0, Math.PI , 0, 'XYZ'))
-    const qx = makeQuat('x', Math.PI * 0.5)
-    // const qx = new Quaternion().setFromEuler(new Euler(Math.PI * tour, 0, 0, 'XYZ'))
-    
+    // Add initial rotation offset along x / y / z axis
+    // (better pick one of the 24 orientations and apply it) :
+
+    // const qy = makeQuat('y', Math.PI)
     // qy.multiply(this.sphere.quaternion)
-    // this.sphere.setRotationFromQuaternion(qy)
-    qx.multiply(this.sphere.quaternion)
-    this.sphere.setRotationFromQuaternion(qx)
+    // this.sphere.setRotationFromQuaternion(qy)  
+    // const qx = makeQuat('x', Math.PI * 0.5)    
+    // qx.multiply(this.sphere.quaternion)
+    // this.sphere.setRotationFromQuaternion(qx)
 
     this.orientations = generateCubeOrientations()
     this.ghostTetra.visible = false
@@ -316,31 +310,6 @@ class ThreeScene {
       requestAnimationFrame(this.animate)
     }, 1000 / 25)
 
-    // requestAnimationFrame(this.animate);
-
-    // const now = Date.now();
-    // const dt = now - this.lastFrameDate || 0;
-    // this.lastFrameDate = now;
-
-    // needed for inertia update, otherwise it is only updated via pointer events
-    // if (this.localControl) {
-    //   this.versorControl.update();
-    // } else {
-    //   if (this.rotation[1]) {
-    //       this.sphere.setRotationFromEuler(this.rotation[0]);
-    //       this.rotation[1] = false;
-    //   }
-
-    //   if (this.zoom[1]) {
-    //       this.camera.zoom = this.zoom[0];
-    //       this.camera.updateProjectionMatrix();
-    //       this.zoom[1] = false;
-    //   }
-    // }
-
-    // animate population
-    // this.particles.update((now - this.startDate) * .0001);
-
     this.updateSnap()
     this.updateGhost()
 
@@ -351,9 +320,6 @@ class ThreeScene {
       mesh.quaternion.copy(inv)
     })
 
-    // if using anaglyph (also make sure to use a PerspectiveCamera):
-    // this.effect.render(this.scene, this.camera);
-    // else :
     this.renderer.render(this.scene, this.camera);
   }
 }

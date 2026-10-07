@@ -1,3 +1,8 @@
+// Problem : how many distinct rotation matrices exist such that we see a square ?
+// answer (thanks gemini and its sources) : 6 faces of a cube can point
+// towards the camera. once a facing face has been chosen, there are 4
+// rotations around z, so we have a total of 6 * 4 = 24 orientations
+
 import { Quaternion, Vector3 } from 'three'
 
 export function generateCubeOrientations() {
